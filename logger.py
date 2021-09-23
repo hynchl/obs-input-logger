@@ -21,7 +21,6 @@ my_setting = None
 trigger = 'keyboard'
 button_listener = None
 button_clicked = 0
-button_prev_pressed = False
 key_listener = None
 key_pressed = 0
 key_released = True
@@ -34,21 +33,11 @@ count = 0 #debugging
 ###############################################################################
 
 def on_click(x, y, button, pressed):
-	global button_clicked, button_prev_pressed
-	if pressed and not button_prev_pressed:
+	global button_clicked
+	if pressed:
 		button_clicked = int(math.log(button.value[0], 4))
-		# if button == Button.left:
-		# 	button_clicked = 0
-		# elif button == Button.middle:
-		# 	button_clicked = 1
-		# elif button == Button.middle:
-		# 	button_clicked = 2
-		# else:
-		# 	print(button)
-		# 	raise ValueError
-		
-	button_prev_pressed = pressed
-
+	else:
+		button_clicked = 0	
 
 def unpack_key(_key, pressed=True):
     raw = format(_key)
@@ -251,7 +240,7 @@ def script_tick(seconds):
 	log = np.concatenate((log, np.array([x, y, c, k, t, 1/seconds])), axis=0)
 
 	count += 1
-	button_clicked = 0
+	# button_clicked = 0
 
 
 def script_description():
@@ -261,9 +250,6 @@ def script_description():
 		Record Cursor Position on each frame, and
 		<br/>
 		Save the log as a csv format which an user defined.
-		<br/>
-		Made by Hyunchul Kim, © 2020
-		<hr>
 		'''
 
 
