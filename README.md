@@ -1,6 +1,6 @@
 # obs-input-logger
 A python script for synchronized input logging on OBS recordings.
-This scripts are tested on Windows 10, OBS 27
+This script was tested on Windows 10, OBS 27
 
 ### Configuration
 1. Make conda virtual environment and install libraries with `requirements.txt`
@@ -9,7 +9,7 @@ This scripts are tested on Windows 10, OBS 27
 4. Set your input type, folder path, and name.
 
 ### Output(csv)
-Each row has following shape.
+Each row has the following shape.
 
 [cursor x, cursor y, pressed button(single), pressed key(multiple), time, fps]
 - current x, cursor y : current cursor location
