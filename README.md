@@ -11,7 +11,7 @@ This script was tested on Windows 10, OBS 27
 ### Output(csv)
 Each row has the following shape.
 
-[cursor x, cursor y, pressed button(single), pressed key(multiple), time, fps]
+[cursor x, cursor y, pressed (single) button, pressed (multiple) keys, time, fps]
 - current x, cursor y : current cursor location
 - pressed button : 0 = None, 1 = Left, 2 = Right, 3 = Mid
 - pressed key : keys joined with `/` ex) 'a/b/c/left/space'
