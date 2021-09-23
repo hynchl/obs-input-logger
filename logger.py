@@ -1,23 +1,3 @@
-#
-# Project	OBS Loggy
-# Version	0.1.0
-# @author	Hyunchul Kim
-# @Homepage	https://kimhyunchul.kr
-#
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-#
-# You should have received a copy of the GNU General Public License
-# along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
-
 import obspython as obs
 import time, sys, os, math
 import numpy as np
@@ -37,8 +17,6 @@ is_being_recorded = False
 start_time_record = None
 log = np.array([])
 my_setting = None
-
-
 
 trigger = 'keyboard'
 button_listener = None
@@ -277,14 +255,16 @@ def script_tick(seconds):
 
 
 def script_description():
-	return "<b>OBS Cursor Logger</b>" + \
-		"<hr>" + \
-		"Record Cursor Position on each frame, and" + \
-		"<br/>" + \
-		"Save the log as a csv format which an user defined." + \
-		"<br/>" + \
-		"Made by Hyunchul Kim, © 2020" + \
-		"<hr>"
+	return '''
+		<b>OBS Cursor Logger</b>
+		<hr>
+		Record Cursor Position on each frame, and
+		<br/>
+		Save the log as a csv format which an user defined.
+		<br/>
+		Made by Hyunchul Kim, © 2020
+		<hr>
+		'''
 
 
 def script_properties():
