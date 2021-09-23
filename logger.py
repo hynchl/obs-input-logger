@@ -236,7 +236,7 @@ def script_tick(seconds):
 	c = button_clicked
 	# print(button_clicked)
 
-	t = time.time() - start_time_record
+	t = time.time() #- start_time_record
 	log = np.concatenate((log, np.array([x, y, c, k, t, 1/seconds])), axis=0)
 
 	count += 1
